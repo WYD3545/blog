@@ -42,10 +42,11 @@ public class JwtUtil {
     }
 
     private Claims getAllClaimsFromToken(String token) {
-        return (Claims) Jwts.parser()
-                .verifyWith(getSignInKey())        // ← 不再用 setSigningKey，强调「验证行为」
+        return Jwts.parser()
+                .verifyWith(getSignInKey())
                 .build()
-                .parseSignedClaims(token);
+                .parseSignedClaims(token)
+                .getPayload();  // 获取 Claims 负载
     }
 
     private boolean isTokenExpired(String token) {
