@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Secrets and Keys
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+*.pub
+!*.gitignore
