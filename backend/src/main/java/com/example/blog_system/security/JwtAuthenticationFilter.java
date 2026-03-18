@@ -33,7 +33,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String authHeader = request.getHeader("Authorization");
 
         if (!StringUtils.hasText(authHeader) || !authHeader.startsWith("Bearer ")) {
-            System.out.println("[JWT Filter] 未找到有效的 Authorization 头");
+            //System.out.println("[JWT Filter] 未找到有效的 Authorization 头");
             filterChain.doFilter(request, response);
             return;
         }
